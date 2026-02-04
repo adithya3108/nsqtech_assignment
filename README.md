@@ -503,7 +503,7 @@ Every component, service, and API endpoint was thoughtfully designed to showcase
 ## 📧 Contact
 
 **Developer:** P.R. ADITHYA  
-**Email:** [Your Email]  
+**Email:**adithyapr3104@gmail.com
 **Submission For:** NSQTech Private Limited - Software Intern Position
 
 ---
