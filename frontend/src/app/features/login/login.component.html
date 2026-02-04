@@ -1,0 +1,100 @@
+<div class="login-container">
+  <div class="login-card">
+    <div class="login-header">
+      <div class="logo">
+        <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+          <rect width="48" height="48" rx="8" fill="#4F46E5"/>
+          <path d="M24 12L32 18V30L24 36L16 30V18L24 12Z" stroke="white" stroke-width="2" fill="none"/>
+          <circle cx="24" cy="24" r="4" fill="white"/>
+        </svg>
+      </div>
+      <h1>NSQTech Login</h1>
+      <p class="subtitle">Background Verification System</p>
+    </div>
+
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="login-form">
+      <div class="form-group">
+        <label for="userId">User ID</label>
+        <input
+          type="text"
+          id="userId"
+          formControlName="userId"
+          placeholder="Enter your user ID"
+          [class.error]="hasError('userId', 'required')"
+        />
+        <span class="error-message" *ngIf="hasError('userId', 'required')">
+          User ID is required
+        </span>
+      </div>
+
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input
+          type="password"
+          id="password"
+          formControlName="password"
+          placeholder="Enter your password"
+          [class.error]="hasError('password', 'required') || hasError('password', 'minlength')"
+        />
+        <span class="error-message" *ngIf="hasError('password', 'required')">
+          Password is required
+        </span>
+        <span class="error-message" *ngIf="hasError('password', 'minlength')">
+          Password must be at least 6 characters
+        </span>
+      </div>
+
+      <div class="form-group">
+        <label for="role">Role</label>
+        <select id="role" formControlName="role" [class.error]="hasError('role', 'required')">
+          <option *ngFor="let role of roles" [value]="role.value">
+            {{ role.label }}
+          </option>
+        </select>
+        <span class="error-message" *ngIf="hasError('role', 'required')">
+          Role is required
+        </span>
+      </div>
+
+      <div class="error-alert" *ngIf="errorMessage">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+          <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z"/>
+        </svg>
+        {{ errorMessage }}
+      </div>
+
+      <button type="submit" class="btn-primary" [disabled]="loading">
+        <span *ngIf="!loading">Login</span>
+        <span *ngIf="loading" class="loading-spinner">
+          <svg class="spinner" viewBox="0 0 24 24">
+            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4" fill="none"/>
+            <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"/>
+          </svg>
+          Logging in...
+        </span>
+      </button>
+    </form>
+
+    <div class="demo-credentials">
+      <p class="demo-title">Demo Credentials (Click to Auto-fill):</p>
+      <div class="demo-buttons">
+        <button type="button" class="btn-demo" (click)="quickLogin('admin')">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+            <path d="M8 8a3 3 0 100-6 3 3 0 000 6zM12.93 11.93a7 7 0 11-9.86 0A4.997 4.997 0 018 10a4.997 4.997 0 014.93 1.93z"/>
+          </svg>
+          Admin (admin001)
+        </button>
+        <button type="button" class="btn-demo" (click)="quickLogin('user')">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+            <path d="M8 8a3 3 0 100-6 3 3 0 000 6zM12.93 11.93a7 7 0 11-9.86 0A4.997 4.997 0 018 10a4.997 4.997 0 014.93 1.93z"/>
+          </svg>
+          User (user001)
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <footer class="login-footer">
+    <p>&copy; 2025 NSQTech Private Limited. All rights reserved.</p>
+  </footer>
+</div>
