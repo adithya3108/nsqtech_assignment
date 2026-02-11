@@ -451,59 +451,12 @@ Potential improvements for production:
 
 ---
 
-## 📝 Assignment Requirements Checklist
 
-✅ **Login Page**
-- User ID field
-- Password field
-- Role selection (General User / Admin)
-- Dummy API with storage (MongoDB)
-
-✅ **Logged In Page**
-- User details display
-- API call to fetch records
-- Table format display
-- Access level based on role
-
-✅ **Admin Features**
-- User management mechanism
-- View all users
-- Create/Edit/Delete users
-
-✅ **Async Processing**
-- Delay parameter in API
-- Loading states
-- Async processing demonstration
-
-✅ **Code Quality**
-- Modularized code structure
-- Service layer implementation
-- Clean architecture
-- Creative design
-- Professional UI/UX
-
----
-
-## 👨‍💻 Developer Notes
-
-This application was built from scratch without copying GitHub code. It demonstrates:
-
-- Deep understanding of Angular framework and lifecycle
-- Proficiency in TypeScript and modern JavaScript
-- RESTful API design principles
-- Security best practices
-- Clean code and architecture
-- Professional UI/UX design skills
-- Full-stack development capabilities
-
-Every component, service, and API endpoint was thoughtfully designed to showcase real-world development skills applicable to the Software Intern position at NSQTech.
-
----
 
 ## 📧 Contact
 
 **Developer:** P.R. ADITHYA  
-**Email:**adithyapr3104@gmail.com
+**Email:** adithyapr3104@gmail.com
 **Submission For:** NSQTech Private Limited - Software Intern Position
 
 ---
@@ -511,5 +464,4 @@ Every component, service, and API endpoint was thoughtfully designed to showcase
 ## 📄 License
 
 This project is submitted as part of a code challenge for NSQTech Private Limited.
-
-© 2025 P.R. ADITHYA. All rights reserved.
+ 
